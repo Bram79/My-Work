@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100%;
+}
+
+
+
+
+/*content*/
+
+.content {
+    background-image: url(../image/Eid-mubarak-wityh-arabic-calligraphy-premium-vector-PNG.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgb(0, 0, 0);
+    height: 50vh;
+    background-color: rgb(216, 216, 216);
+}
+
+.content p {
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: rgba(214, 214, 214, 0.527);
+    border-radius: 10px;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: 600;
+    border-bottom: 4px solid rgb(224, 155, 26);
+}
+
+.content button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background: rgb(224, 155, 26);
+    border: 5px solid rgb(224, 155, 26);
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.content button:hover {
+    background: white;
+    color: rgb(224, 155, 26);
+}
+
+/*option*/
+
+.category_text h1 {
+    font-size: 40px;
+    background-color: bisque;
+}
+
+.category_text p {
+    text-align: center;
+    font-size: 17px;
+    background-color: bisque;
+}
+
+.category {
+    width: auto;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0 0 14px black;
+}
+
+.category_item {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(224, 208, 178);
+    position: relative;
+    border-radius: 10px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.category_image img {
+    width: 175px;
+    height: 150px;
+    padding: 15px;
+    margin: auto;
+}
+
+.category_image{
+    text-decoration: none;
+}
+
+.category_pea {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    
+}
+
+/*shopping made simple*/
+
+.icon{
+    color:  rgb(224, 155, 26);
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(230, 230, 230);
+}
+
+.icon p{
+    color: black;
+}
+
+.icon_header h1{
+    color: black;
+    background-color: rgb(230, 230, 230);
+
+}
+
+.f20{
+    font-size: 100px;
+}
+
+.free_shipping{
+    margin-right: 20px;
+    margin-top: 70px;
+    padding: 5px 5%;
+    width: 500px; 
+}
+
+.free_pickup{
+    margin-top: 70px;
+    width: 500px; 
+}
+
+.payment{
+    margin-left: 20px;
+    margin-top: 70px;
+    padding: 5px 5%;
+    width: 500px; 
+}
+
+.Order_now{
+    background-color: rgb(230, 230, 230);
+    height: 150px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Order_now button {
+    background: rgb(224, 155, 26);
+    border: 5px solid rgb(224, 155, 26);
+    height: 65px;
+    width: 150px;
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Order_now button:hover{
+    background: white;
+    color: rgb(224, 155, 26); 
+}
+
+.footer{
+    height: 100px;
+    background-color: rgb(207, 204, 200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_text{
+    font-weight: 600;
+}
