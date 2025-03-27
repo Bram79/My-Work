@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 5px solid rgb(153, 154, 155);
+    border-radius: 50px;
+    background-color: rgb(153, 154, 155);
+}
+
+#display{
+    font-size: 5rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+    text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.75);
+    margin-bottom: 25px;
+}
+
+#controls button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+#startStop.start{
+    background-color: rgb(122, 197, 9);
+}
+#startStop.start:hover{
+    background-color: rgb(119, 163, 53);
+}
+#startStop.stop{
+    background-color: rgb(255, 0, 0);
+}
+#startStop.stop:hover{
+    background-color: rgb(138, 37, 37);
+}
+#resetBtn{
+    background-color: rgb(6, 205, 255);
+}
+#resetBtn:hover{
+    background-color: rgb(32, 134, 148);
+}
+
+body.light-mode{
+    background-color: white;
+    color: black;
+}
+body.light-mode #container{
+    border: solid rgb(128, 128, 128);
+}
+#lightBtn{
+    background-color: rgb(209, 195, 0);
+}
+#lightBtn:hover{
+    background-color: rgb(170, 155, 14);
+}
+
+
+
+body.dark-mode{
+    background-color: black;
+    color: black;
+}
+body.dark-mode #display{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(255, 174, 0),
+        0 0 20px rgb(255, 174, 0),
+        0 0 40px rgb(255, 174, 0),
+        0 0 80px rgb(255, 174, 0),
+        0 0 120px rgb(255, 174, 0),
+        0 0 160px rgb(255, 174, 0),
+        0 0 200px rgb(255, 174, 0);
+}
+body.dark-mode #container{
+    background-color: rgb(58, 58, 58);
+    border: solid rgb(92, 92, 92);
+}
+#lightBtn.dark-mode{
+background-color: blue;
+}
+#lightBtn.dark-mode:hover{
+    background-color: rgb(3, 3, 133);
+    }
