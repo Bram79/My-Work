@@ -4,70 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Laravel</title>
+    <link rel="stylesheet" href="{{ asset('css/styleLaravel.css') }}">
+
 </head>
 
 <body>
 
-    @auth
-        <h1>Congrats ur are logged in</h1>
-        <form action="/logout" method="POST">
-            @csrf
-            <button>Log out</button>
-        </form>
+    @include('nav')
 
-        <div style="border: 3px solid black;">
-            <h2>Create a New Post</h2>
-            <form action="/create-post" method="POST">
+    </form>
+
+    @auth
+        <div class="box">
+            <h1>Congrats ur are logged in</h1>
+            <form style="display: flex; justify-content: center;" action="/logout" method="POST">
                 @csrf
-                <input type="text" name="title" placeholder="post title">
-                <textarea name="body" placeholder="body content..."></textarea>
-                <button>Submit Post</button>
+                <button class="btn-small" type="submit">Log out</button>
             </form>
         </div>
 
-        <div style="border: 3px solid black;">
+        <div class="box">
+            <h2>Create a New Post</h2>
+            <form action="/create-post" method="POST">
+                @csrf
+                <input type="text" class="form-control" name="title" placeholder="post title">
+                <textarea class="form-control" name="body" placeholder="body content..."></textarea>
+                <button class="btn" type="submit">Submit Post</button>
+            </form>
+        </div>
+
+        <div class="box">
             <h2>User posts</h2>
             @foreach($posts as $post)
-                <div style="background-color :blanchedalmond; padding: 10px; margin: 10px;">
+                <div class="postBox">
                     <h3>{{$post['title']}} - by {{$post->user->name}}</h3>
                     {{$post['body']}}
-                    <p><a href="/edit-post/{{$post->id}}">Edit</a></p>
+                    <p class="btn-small"><a href="/edit-post/{{$post->id}}">Edit</a></p>
                     <form action="/delete-post/{{$post->id}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button>Delete</button>
+                        <button class="btn-small" type="submit">Delete</button>
                     </form>
                 </div>
             @endforeach
         </div>
 
     @else
-        <div style="border: 3px solid black;">
-            <h2>Register</h2>
-            <form action="/register" method="POST">
-                @csrf
-                <input name="name" type="text" placeholder="name">
-                <input name="email" type="text" placeholder="email">
-                <input name="password" type="password" placeholder="password">
-                <button>Register</button>
-            </form>
-        </div>
-
-        <div style="border: 3px solid black;">
-            <h2>Login</h2>
+        <div class="box">
+            <h1>Login</h1>
             <form action="/login" method="POST">
                 @csrf
-                <input name="loginName" type="text" placeholder="name">
-                <input name="loginPassword" type="password" placeholder="password">
-                <button>Login</button>
+                <input name="loginName" class="form-control" type="text" placeholder="name">
+                <input name="loginPassword" class="form-control" type="password" placeholder="password">
+                <button class="btn" type="submit">Login</button>
             </form>
         </div>
 
-        <div style="border: 3px solid black;">
+        <div class="box">
+            <h1>Register</h1>
+            <form action="/register" method="POST">
+                @csrf
+                <input name="name" class="form-control" type="text" placeholder="name">
+                <input name="email" class="form-control" type="text" placeholder="email">
+                <input name="password" class="form-control" type="password" placeholder="password">
+                <button class="btn" type="submit">Register</button>
+            </form>
+        </div>
+        <div class="box">
             <h2>All posts</h2>
             @foreach($posts as $post)
-                <div style="background-color :blanchedalmond; padding: 10px; margin: 10px;">
+                <div class="postBox">
                     <h3>{{$post['title']}} - by {{$post->user->name}}</h3>
                     {{$post['body']}}
                     @csrf
@@ -75,7 +82,6 @@
             @endforeach
         </div>
     @endauth
-
 
 </body>
 

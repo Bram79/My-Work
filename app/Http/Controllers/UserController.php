@@ -9,6 +9,16 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+    public function showRegisterForm()
+    {
+        return view('register');
+    }
+
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
     public function login(Request $request)
     {
         $incomingFields = $request->validate([
@@ -37,7 +47,7 @@ class UserController extends Controller
             'password' => ['required', 'min:6', 'max:200']
         ]);
 
-        $incomingFields['password'] = bcrypt($incomingFields['password']);
+        $incomingFields['password'] = bcrypt($incomingFields['password']); //hashed de wachtwoord
         $user = User::create($incomingFields);
         auth()->login($user);
         return redirect('/');
